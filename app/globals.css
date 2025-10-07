@@ -15,11 +15,16 @@
   /* --color-text-title-active-primary: #FFFFFF; */
   --color-text-primary: #FFFFFF;
   --color-text-navbar: #E1D0D0;
-  --color-text-colorful: #FFBD39;
-  --color-text-fourth: #7B68EE;
-  /* --color-text-aboutme-subtitle-tertiary: #CCCCCC; */
+  /* --color-text-aboutme-subtitle: #CCCCCC; */
   --color-text-seconday: #CCCCCC;
   --color-text-input: #757575;
+
+  --color-accent-primary: #7B68EE;
+  --color-accent-secondary: #FFBD39;
+
+  --color-bg-btn-primary-hover: rgba(123, 104, 238, 0.8);
+  --color-bg-btn-secondary-hover: rgba(255, 189, 57, 0.8); 
+  --color-bg-btn-animation: #3e57d0;
 
   --background: var(--color-bg-level-1);
   /* --foreground: #ededed; */
@@ -54,3 +59,5 @@ body {
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+
