@@ -24,13 +24,13 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 mx-18 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-[var(--background)]/80 backdrop-blur-lg shadow-sm border-b border-[var(--foreground)]/20"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl px-6 py-4 ">
+      <div className="max-w-6xl px-4 py-4 mx-auto ">
         <div className="flex justify-between items-baseline">
           <motion.div
             initial={{ opacity: 0 }}
