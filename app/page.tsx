@@ -1,9 +1,14 @@
+import { HeroSection } from "./components/HeroSection";
+import { MainContent } from "./components/MainContent";
 import Navbar from "./components/NavBar";
 
-export default function HomePage () {
-  return(
+export default function HomePage() {
+  return (
     <>
-    <Navbar/>
+      <Navbar />
+      <MainContent>
+        <HeroSection />
+      </MainContent>
     </>
-  )
+  );
 }
