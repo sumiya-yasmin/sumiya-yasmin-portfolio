@@ -12,7 +12,7 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
 }) => {
      const isPrimary = variant === "primary";
   const baseClasses =
-    "px-10 py-3 cursor-pointer font-semibold overflow-hidden relative custom-btn-animation " + "transition-shadow duration-300 shadow-xl hover:shadow-2xl transform";
+    "px-8 py-3 cursor-pointer text-sm font-semibold overflow-hidden relative custom-btn-animation " + "transition-shadow duration-300 shadow-xl hover:shadow-2xl transform";
   const colorClasses = "text-white"
 
 const baseBg = isPrimary? "var(--color-accent-primary)": "var(--color-accent-secondary)";
