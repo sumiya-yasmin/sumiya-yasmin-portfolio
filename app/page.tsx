@@ -2,6 +2,7 @@ import  AboutSection  from "./components/AboutSection";
 import { HeroSection } from "./components/HeroSection";
 import { MainContent } from "./components/MainContent";
 import Navbar from "./components/NavBar";
+import TechExpertiseSection from "./components/TechExpertiseSection";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <MainContent>
         <HeroSection />
         <AboutSection />
+        <TechExpertiseSection />
       </MainContent>
     </>
   );
