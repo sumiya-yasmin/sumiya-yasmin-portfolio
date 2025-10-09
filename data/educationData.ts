@@ -12,7 +12,7 @@ export const educationData = [
     ],
   },
   {
-    title: "Higher Secondary School Certificate (Science)",
+    title: "Higher Secondary School Certificate",
     subtitle: "Kushtia Govt College, Kushtia",
     date: "2016 - 2018",
     grade: "GPA: **5.00** (out of 5.00)",
@@ -22,7 +22,7 @@ export const educationData = [
     ],
   },
   {
-    title: "Secondary School Certificate (Science)",
+    title: "Secondary School Certificate",
     subtitle: "Kushtia Govt Girls High School, Kushtia",
     date: "2014 - 2016",
     grade: "GPA: **5.00** (out of 5.00)",
