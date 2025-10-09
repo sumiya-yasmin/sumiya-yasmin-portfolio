@@ -2,6 +2,7 @@ import  AboutSection  from "./components/AboutSection";
 import EducationSection from "./components/EducationSection";
 import ExperienceSection from "./components/ExperienceSection";
 import { HeroSection } from "./components/HeroSection";
+import { LearningJourneySection } from "./components/LearningJourneySection";
 import { MainContent } from "./components/MainContent";
 import Navbar from "./components/NavBar";
 import ProjectSection from "./components/ProjectSection";
@@ -18,6 +19,7 @@ export default function HomePage() {
         <ExperienceSection />
         <ProjectSection />
         <EducationSection />
+        <LearningJourneySection />
       </MainContent>
     </>
   );
