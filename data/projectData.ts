@@ -1,4 +1,4 @@
-export const categories = ["ALL", "FULLSTACK", "NEXT.JS", "API/NODE"];
+export const categories = ["ALL", "FULLSTACK", "MERN", "ASP-DOTNET-CORE", "REACT-NATIVE"];
 
 export const projectItems = [
     { 
@@ -20,7 +20,7 @@ export const projectItems = [
        { 
         id: 3, 
         image: "/item1.png",
-        title: "EXpense Income Tracker", 
+        title: "Expense Income Tracker", 
         categories: ["FRONTEND","MOBILE-APP", "REACT-NATIVE"], 
         liveLink: "https://github.com/sumiya-yasmin/expense-income-tracker-react-native-ui",
         githubLink: "https://github.com/sumiya-yasmin/expense-income-tracker-react-native-ui"
