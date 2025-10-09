@@ -1,4 +1,5 @@
 import  AboutSection  from "./components/AboutSection";
+import ExperienceSection from "./components/ExperienceSection";
 import { HeroSection } from "./components/HeroSection";
 import { MainContent } from "./components/MainContent";
 import Navbar from "./components/NavBar";
@@ -12,6 +13,7 @@ export default function HomePage() {
         <HeroSection />
         <AboutSection />
         <TechExpertiseSection />
+        <ExperienceSection />
       </MainContent>
     </>
   );
