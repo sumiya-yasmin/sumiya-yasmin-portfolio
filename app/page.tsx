@@ -3,6 +3,7 @@ import ExperienceSection from "./components/ExperienceSection";
 import { HeroSection } from "./components/HeroSection";
 import { MainContent } from "./components/MainContent";
 import Navbar from "./components/NavBar";
+import ProjectSection from "./components/ProjectSection";
 import TechExpertiseSection from "./components/TechExpertiseSection";
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
         <AboutSection />
         <TechExpertiseSection />
         <ExperienceSection />
+        <ProjectSection />
       </MainContent>
     </>
   );
