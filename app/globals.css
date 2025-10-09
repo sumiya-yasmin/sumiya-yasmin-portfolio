@@ -21,6 +21,7 @@
 
   --color-accent-primary: #7B68EE;
   --color-accent-secondary: #FFBD39;
+  --color-accent-tertiary: #163d4d;
 
   /* --color-bg-btn-primary-hover: rgba(123, 104, 238, 0.8);
   --color-bg-btn-secondary-hover: rgba(255, 189, 57, 0.8);  */
@@ -83,9 +84,32 @@ body {
   transform:scaleX(1)
 }
 
+.project-card{
+  position: relative;
+}
 
+.project-card::before{
+  content:"";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  border-radius: 0.5rem;
+  background-color: var(--color-accent-secondary);
+  opacity: 0.8; 
+  transform: translate(-50%, -50%) scaleX(0); 
+  transform-origin: left;
+  transition: transform 0.4s ease-out;
+  z-index: 10;
+}
+
+.project-card:hover::before {
+    transform: translate(-50%, -50%) scaleX(1); 
+}
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 
