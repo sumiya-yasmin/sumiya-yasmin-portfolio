@@ -1,9 +1,19 @@
 "use client";
 import Image from "next/image";
 import { Link, Eye } from "lucide-react";
-import { projectItems } from "@/data/projectData";
+import { categories, projectItems } from "@/data/projectData";
+import { useMemo, useState } from "react";
 
 export default function ProjectSection() {
+  const [activeFilter, setActiveFilter] = useState("ALL");
+  const filteredItems = useMemo(() => {
+    if (activeFilter == "ALL") {
+      return projectItems;
+    }
+    return projectItems.filter((item) =>
+      item.categories.includes(activeFilter)
+    );
+  }, [activeFilter]);
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
@@ -11,28 +21,30 @@ export default function ProjectSection() {
           My Projects
         </h2>
         <div className="h-0.5 w-26 bg-[var(--color-accent-secondary)] mx-auto mb-4" />
-        <p className="text-[var(--color-text-secondary)] mb-12">
+        <p className="text-[16px] mb-12 max-w-2xl mx-auto font-normal text-center text-[var(--color-text-secondary)]">
           Showcasing my best Fullstack, web applications, demonstrating clean
           code and technical depth.
         </p>
 
-        <div className="flex justify-center space-x-6 mb-12 font-bold">
-          <button className="text-[var(--color-accent-secondary)] border-b-2 border-[var(--color-accent-secondary)]">
-            ALL
-          </button>
-          <button className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-secondary)]">
-            FULLSTACK
-          </button>
-          <button className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-secondary)]">
-            MERN
-          </button>
-          <button className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent-secondary)]">
-            ASP DOTNET CORE
-          </button>
+        <div className="flex justify-center space-x-6 mb-12 font-medium">
+          {categories.map((category, index) => {
+            return (
+              <button
+                className={` cursor-pointer ${
+                  activeFilter == category &&
+                  "text-[var(--color-accent-secondary)]"
+                }`}
+                key={index}
+                onClick={() => setActiveFilter(category)}
+              >
+                {category.split(/-/).join(" ")}
+              </button>
+            );
+          })}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projectItems.map((item) => {
+          {filteredItems.map((item) => {
             return (
               <div
                 key={item.id}
