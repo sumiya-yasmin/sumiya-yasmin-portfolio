@@ -3,9 +3,28 @@ import Image from "next/image";
 import { Link, Eye } from "lucide-react";
 import { categories, projectItems } from "@/data/projectData";
 import { useMemo, useState } from "react";
+import ProjectModal from "./ProjectModal";
+ import { Project } from "../types/index"
 
+ interface ModalState {
+ isOpen: boolean;
+ project: Project | null; 
+}
+const initialModalState : ModalState = { 
+    isOpen: false, 
+    project: null 
+};
 export default function ProjectSection() {
   const [activeFilter, setActiveFilter] = useState("ALL");
+  const [modalState, setModalState] = useState(initialModalState);
+
+  const openModal = (project : Project) =>{
+    setModalState({isOpen: true, project: project});
+  }
+  const closeModal = () =>{
+    setModalState(initialModalState);
+  }
+
   const filteredItems = useMemo(() => {
     if (activeFilter == "ALL") {
       return projectItems;
@@ -67,20 +86,24 @@ export default function ProjectSection() {
                     <Link size={24} />
                   </a>
 
-                  <a
-                    href={item.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                   onClick={()=>openModal(item)}
                     className="p-4 m-2 rounded-full border border-white hover:bg-gray-200 hover:text-[var(--color-accent-secondary)] transition-colors"
                   >
                     <Eye size={24} />
-                  </a>
+                  </button>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-    </section>
+      {modalState.isOpen && (
+            <ProjectModal 
+              project={modalState.project!} 
+              onClose={closeModal} 
+            />
+          )}
+        </section>
   );
 }
