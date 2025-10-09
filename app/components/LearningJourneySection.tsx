@@ -1,7 +1,7 @@
 "use client";
 import { learningJourneyData } from "@/data/learningJourneyData";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { formatTextWithBolds } from "./FormatTextBold";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 const variants = {
@@ -23,10 +23,39 @@ const variants = {
 export const LearningJourneySection = () => {
   const [[page, direction], setPage] = useState<[number, number]>([0, 0]);
   const data = learningJourneyData;
+  const autoPlayRef = useRef<number | null>(null);
   const journeyIndex = Math.abs(page % data.length);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
+  };
+  const startAutoPlay = useCallback(() => {
+    if (autoPlayRef.current) {
+      window.clearInterval(autoPlayRef.current);
+    }
+
+    autoPlayRef.current = window.setInterval(() => {
+      paginate(1);
+    }, 4000);
+  }, [paginate]);
+
+  useEffect(() => {
+    startAutoPlay();
+
+    return () => {
+      if (autoPlayRef.current) {
+        window.clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [startAutoPlay]);
+  const handleMouseEnter = () => {
+    if (autoPlayRef.current) {
+      window.clearInterval(autoPlayRef.current);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    startAutoPlay();
   };
   const BG = "bg-[var(--color-bg-level-2)]";
 
@@ -36,11 +65,16 @@ export const LearningJourneySection = () => {
         <h2 className="text-3xl font-bold mb-4 text-[var(--color-text-secondary)]">
           My Learning Journey
         </h2>
+        <div className="h-0.5 w-26 bg-[var(--color-accent-secondary)] mx-auto mb-4" />
         <p className="text-[16px] mb-12 max-w-2xl mx-auto font-normal text-[var(--color-text-secondary)]">
           A glimpse of how my path evolved across different technologies and
           problem domains.
         </p>
-        <div className="relative max-w-4xl mx-auto overflow-hidden flex items-center justify-center w-full min-h-[300px]">
+        <div
+          className="relative max-w-4xl mx-auto overflow-hidden flex items-center justify-center w-full min-h-[400px]"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={page}
@@ -50,19 +84,19 @@ export const LearningJourneySection = () => {
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "tween", duration: 0.45, ease: "easeInOut" },
-                opacity: { duration: 0.25 },
+                x: { type: "tween", duration: 0.8, ease: "easeInOut" },
+                opacity: { duration: 0.8 },
               }}
               layout="position"
-              className="absolute w-[600px] max-w-full p-6 md:p-8 bg-teal-800 rounded-lg shadow-2xl"
+              className="absolute w-[600px] h-auto max-w-full p-6 md:p-8 bg-[var(--color-bg-carousel)] rounded-lg shadow-2xl"
             >
-              <p className="font-bold text-xl text-white">
+              <p className="font-bold text-left text-xl mb-4 text-[var(--color-text-primary)]">
                 {data[journeyIndex].title}
               </p>
-              <p className="text-lg italic text-white mb-6">
+              <p className="text-sm text-left font-semibold text-[var(--color-text-primary)] mb-3">
                 "{data[journeyIndex].subtitle}"
               </p>
-              <p className="text-sm text-gray-200">
+              <p className="text-left text-[16px] text-[var(--color-text-secondary)]">
                 {data[journeyIndex].descriptionPoints.map((point, i) => (
                   <li key={i}>{formatTextWithBolds(point)}</li>
                 ))}
@@ -70,14 +104,20 @@ export const LearningJourneySection = () => {
             </motion.div>
           </AnimatePresence>
           <button
-            onClick={() => paginate(1)}
+            onClick={() => {
+              handleMouseEnter();
+              paginate(1);
+            }}
             className="absolute right-0 top-1/2 -translate-y-1/2 p-3 bg-gray-700/50 rounded-full z-10 hover:bg-gray-700 transition-colors"
             aria-label="Next Journey"
           >
             <ChevronRight className="text-white" size={24} />
           </button>
           <button
-            onClick={() => paginate(-1)}
+            onClick={() => {
+              handleMouseEnter();
+              paginate(-1);
+            }}
             className="absolute left-0 top-1/2 -translate-y-1/2 p-3 bg-gray-700/50 rounded-full z-10 hover:bg-gray-700 transition-colors"
             aria-label="Previous Journey"
           >

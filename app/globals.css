@@ -8,6 +8,7 @@
   --color-bg-level-3: #262020; 
   --color-bg-level-4: #3E3C3C; /*aboutme card*/
   --color-bg-input: #6F6C6C;
+  --color-bg-carousel: #136C64;
 
   /* --color-text-primary: #f0f0f0;    
   --color-text-secondary: #a3a3a3; */
@@ -22,6 +23,7 @@
   --color-accent-primary: #7B68EE;
   --color-accent-secondary: #FFBD39;
   --color-accent-tertiary: #163d4d;
+
 
   /* --color-bg-btn-primary-hover: rgba(123, 104, 238, 0.8);
   --color-bg-btn-secondary-hover: rgba(255, 189, 57, 0.8);  */
