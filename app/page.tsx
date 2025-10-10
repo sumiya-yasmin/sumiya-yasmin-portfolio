@@ -1,6 +1,9 @@
 import  AboutSection  from "./components/AboutSection";
+import { CertificationsSection } from "./components/CertificateSection";
+import ContactSection from "./components/ContactSection";
 import EducationSection from "./components/EducationSection";
 import ExperienceSection from "./components/ExperienceSection";
+import { FooterSection } from "./components/FooterSection";
 import { HeroSection } from "./components/HeroSection";
 import { LearningJourneySection } from "./components/LearningJourneySection";
 import { MainContent } from "./components/MainContent";
@@ -20,6 +23,9 @@ export default function HomePage() {
         <ProjectSection />
         <EducationSection />
         <LearningJourneySection />
+        <CertificationsSection />
+        <ContactSection />
+        <FooterSection/>
       </MainContent>
     </>
   );
