@@ -11,3 +11,13 @@ export interface Project{
   timeframe?: string;
   challenges?: { problem: string; solution: string }[];
 }
+
+export interface CertificateData {
+    tag: string;
+    date: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    link: string;
+    imageUrl: string;
+}
