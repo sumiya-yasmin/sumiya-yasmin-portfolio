@@ -1,7 +1,6 @@
 "use client";
 import { socialLinks, stats } from "@/data/aboutData";
 import { motion } from "framer-motion";
-// import CountUp from 'react-countup';
 import { AnimatedButton } from "./AnimatedButton";
 import { ClientCountUp } from "./ClientCountUp";
 const containerVariants = {
