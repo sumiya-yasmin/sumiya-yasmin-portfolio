@@ -6,10 +6,8 @@ export default function ContactSection() {
   const contactBG = "bg-[var(--color-bg-level-2)]";
   const inputBg = "bg-[var(--color-bg-level-1)]";
   const inputBorder = "border-[var(--color-bg-input-border)]";
-  const submitBg = "bg[var(--color-accent-primary)]";
-  const accentColor = "var(--color-accent-primary)";
   return (
-    <section className={`px-6 py-24 ${contactBG}`}>
+    <section id="contact" className={`px-6 py-24 ${contactBG}`}>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-4 text-center text-[var(--color-text-secondary)]">
           Contact Me

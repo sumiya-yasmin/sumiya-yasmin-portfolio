@@ -20,7 +20,7 @@ const itemVariants: Variants = {
 export default function EducationSection() {
   const educationBG = "bg-[var(--color-bg-level-2)]";
   return (
-    <section className={`px-6 py-24 ${educationBG}`}>
+    <section id="education" className={`px-6 py-24 ${educationBG}`}>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-4 text-center text-[var(--color-text-secondary)]">
           My Education

@@ -19,7 +19,7 @@ const itemVariants = {
 export default function AboutSection() {
   const aboutBG = "bg-[var(--color-bg-level-2)]";
   return (
-    <section className={`${aboutBG} py-24 px-6`}>
+    <section id="about" className={`${aboutBG} py-24 px-6`}>
       <motion.div
         className="max-w-6xl mx-auto"
         variants={containerVariants}

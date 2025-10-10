@@ -111,7 +111,7 @@ export const LearningJourneySection = () => {
             className="absolute right-0 top-1/2 -translate-y-1/2 p-3 bg-gray-700/50 rounded-full z-10 hover:bg-gray-700 transition-colors"
             aria-label="Next Journey"
           >
-            <ChevronRight className="text-white" size={24} />
+            <ChevronRight className="text-[var(--color-text-primary)]" size={24} />
           </button>
           <button
             onClick={() => {
@@ -121,7 +121,7 @@ export const LearningJourneySection = () => {
             className="absolute left-0 top-1/2 -translate-y-1/2 p-3 bg-gray-700/50 rounded-full z-10 hover:bg-gray-700 transition-colors"
             aria-label="Previous Journey"
           >
-            <ChevronLeft className="text-white" size={24} />
+            <ChevronLeft className="text-[var(--color-text-primary)]" size={24} />
           </button>
         </div>
       </div>

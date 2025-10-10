@@ -23,7 +23,7 @@ const itemVariants: Variants = {
 };
 export default function TechExpertiseSection() {
   return (
-    <section className="px-6 py-24">
+    <section id="skills" className="px-6 py-24">
       <motion.div
         className="max-w-6xl mx-auto"
         variants={containerVariants}

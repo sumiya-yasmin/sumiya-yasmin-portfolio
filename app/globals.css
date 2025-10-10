@@ -7,9 +7,8 @@
   /*services card*/
   --color-bg-level-3: #262020; 
   --color-bg-level-4: #3E3C3C; /*aboutme card*/
-  --color-bg-input: #6F6C6C;
   --color-bg-carousel: #136C64;
-
+  
   /* --color-text-primary: #f0f0f0;    
   --color-text-secondary: #a3a3a3; */
   
@@ -18,6 +17,8 @@
   --color-text-navbar: #E1D0D0;
   /* --color-text-aboutme-subtitle: #CCCCCC; */
   --color-text-seconday: #CCCCCC;
+  
+  --color-bg-input-border: #6F6C6C;
   --color-text-input: #757575;
 
   --color-accent-primary: #7B68EE;

@@ -2,9 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-// import { Github, Linkedin, Mail } from "lucide-react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-
+const navItems = [
+    { name: "Home", id: "" }, 
+    { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
+    { name: "Experience", id: "experience" },
+    { name: "Projects", id: "projects" },
+    { name: "Education", id: "education" },
+    { name: "Contact", id: "contact" },
+  ];
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -26,7 +33,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[var(--background)]/80 backdrop-blur-lg shadow-sm border-b border-[var(--foreground)]/20"
+          ? "bg-[var(--background)] backdrop-blur-lg shadow-sm border-b border-[var(--foreground)]/20"
           : "bg-transparent"
       }`}
     >
@@ -42,41 +49,20 @@ export default function Navbar() {
           </motion.div>
 
           <div className={`hidden md:flex space-x-8 items-center ${navTextColorClass}`}>
-            {["Home","About","Services","Resume", "Portfolio", "Blog", "Contact"].map((item, i) => (
+            {navItems.map((item, i) => (
               <motion.a
-                key={item}
+                key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i }}
-                href={`#${item.toLowerCase()}`}
+                 href={item.id === "" ? "/" : `#${item.id}`} 
                 className={`${accentColorClass} transition-colors cursor-pointer uppercase`}
               >
-                {item}
+                {item.name}
               </motion.a>
             ))}
              <ThemeSwitcher />
           </div>
-
-          {/* <div className="flex space-x-4 items-center">
-            {[
-              { icon: Github, href: "https://github.com/sumiya-yasmin" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/sumiya-yasmin/" },
-              { icon: Mail, href: "mailto:rahmansimi3996@gmail.com" },
-            ].map(({ icon: Icon, href }, i) => (
-              <motion.a
-                key={i}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 + 0.1 * i }}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 hover:bg-[var(--foreground)]/10 rounded-lg transition-colors"
-              >
-                <Icon size={20} />
-              </motion.a>
-            ))}
-          </div> */}
            
         </div>
       </div>
