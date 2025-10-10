@@ -12,22 +12,28 @@ const ThemeContext = createContext<{
 } | null>(null);
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      const storedTheme = localStorage.getItem("theme");
-      if (storedTheme) {
-        return storedTheme;
-      }
+  const [theme, setTheme] = useState("dark");
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
     }
-    return "dark";
-  });
+    if (document.body) {
+      document.body.setAttribute("data-theme", storedTheme || "dark");
+    }
+  }, []);
 
   useEffect(() => {
-    if (document.body) {
-      document.body.setAttribute("data-theme", theme);
+    if (mounted) {
+      if (document.body) {
+        document.body.setAttribute("data-theme", theme);
+      }
+      localStorage.setItem("theme", theme);
     }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  }, [theme, mounted]);
+
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
@@ -38,12 +44,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   );
 };
 export const useTheme = () => {
- const context = useContext(ThemeContext);
+  const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
-
-}
-
-  
+};

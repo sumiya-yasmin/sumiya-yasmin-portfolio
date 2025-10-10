@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import React, { useState, useEffect } from "react";
-import CountUp from "react-countup";
 
 interface ClientCountUpProps {
   end: number;

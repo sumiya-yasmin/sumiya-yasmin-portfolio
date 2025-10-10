@@ -17,7 +17,8 @@
   --color-text-navbar: #E1D0D0;
   /* --color-text-aboutme-subtitle: #CCCCCC; */
   --color-text-seconday: #CCCCCC;
-  
+  --color-text-tertiary: #CCCCCC;
+
   --color-bg-input-border: #6F6C6C;
   --color-text-input: #757575;
 
@@ -38,19 +39,27 @@
 }
 
 [data-theme="light"] {
-  --color-light-bg-level-1:#ffffff;
-  --color-light-bg-level-2:#f7f7f7;
-  --color-light-bg-level-3:#e9e9e9;
+  --color-bg-level-1:#ffffff;
+  --color-bg-level-2:#f7f7f7;
+  --color-bg-level-3:#e9e9e9;
+   --color-bg-level-4: #ffffff; /* AboutMe card/Input bg (Pure White) */
+  --color-bg-carousel: #008080; /* A darker teal for contrast */
 
   --color-text-primary: #171717;
   --color-text-secondary: #666666;
+   --color-text-tertiary: #CCCCCC;
    --color-text-navbar: #171717;
-  
-  --color-accent-gold: #ff9800;
-  --color-accent-teal: #0070f3; 
+    --color-bg-input-border: #cccccc; /* Light gray border */
+  --color-text-input: #aaaaaa; /* Lighter placeholder text */
 
-  --background: #ffffff;
-  --foreground: #171717;
+   --color-accent-primary: #7B68EE;
+  --color-accent-secondary: #FFBD39;
+  --color-accent-tertiary: #3EAF7C; /* Light mode specific tertiary (e.g., Teal) */
+  --color-bg-btn-animation: #3e57d0; /* Keeps the animation color consistent */
+
+
+  --background: var(--color-bg-level-1);
+  --foreground: var(--color-text-primary);
   --primary: #0070f3;
 }
 body {

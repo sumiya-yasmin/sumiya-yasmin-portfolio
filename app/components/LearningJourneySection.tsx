@@ -96,11 +96,11 @@ export const LearningJourneySection = () => {
               <p className="text-sm text-left font-semibold text-[var(--color-text-primary)] mb-3">
                 "{data[journeyIndex].subtitle}"
               </p>
-              <p className="text-left text-[16px] text-[var(--color-text-secondary)]">
+              <ul className="text-left text-[16px] text-[var(--color-text-tertiary)]">
                 {data[journeyIndex].descriptionPoints.map((point, i) => (
                   <li key={i}>{formatTextWithBolds(point)}</li>
                 ))}
-              </p>
+              </ul>
             </motion.div>
           </AnimatePresence>
           <button

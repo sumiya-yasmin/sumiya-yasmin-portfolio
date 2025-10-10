@@ -36,7 +36,7 @@ export const HeroSection = () => {
           <motion.p className="text-3xl font-bold"
           variants={itemVariants}
           > I'm Professional Fullstack Developer &   
-          <span className="text-[var(--color-accent-secondary)]"> Software Engineer</span></motion.p>
+          <span className="text-[var(--color-accent-secondary)]"> Aspiring Software Engineer</span></motion.p>
           <motion.p variants={itemVariants}>
             I specialize in building robust and scalable applications using modern web technologies — from React and Next.js to Node.js, Express, and ASP.NET Core.
           </motion.p>
