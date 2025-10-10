@@ -1,7 +1,9 @@
 "use client";
 import { socialLinks, stats } from "@/data/aboutData";
 import { motion } from "framer-motion";
+// import CountUp from 'react-countup';
 import { AnimatedButton } from "./AnimatedButton";
+import { ClientCountUp } from "./ClientCountUp";
 const containerVariants = {
   hidden: {},
   visible: {
@@ -111,7 +113,12 @@ export default function AboutSection() {
                   variants={itemVariants}
                 >
                   <h3 className="text-4xl font-bold mb-2.5 text-[var(--color-text-primary)]">
-                    {stat.value}
+                   <ClientCountUp 
+                      end={stat.value as number} 
+                      duration={2.5}
+                      decimals={stat.decimals || 0} 
+                      suffix={stat.suffix || ''} 
+                    />
                   </h3>
                   <p className="text-[var(--color-text-secondary)]">
                     {stat.label}
