@@ -41,11 +41,11 @@ export default function AboutSection() {
               className="text-2xl font-bold mb-6 leading-tight text-[var(--color-text-secondary)]"
               variants={itemVariants}
             >
-              Hello! I'm{" "}
+              Hello! I&apos;m{" "}
               <span className="text-[var(--color-accent-secondary)]">
                 Sumiya Yasmin
               </span>
-              . I'm a Professional{" "}
+              . I&apos;m a Professional{" "}
               <span className="text-[var(--color-accent-secondary)]">
                 Fullstack Developer
               </span>{" "}
