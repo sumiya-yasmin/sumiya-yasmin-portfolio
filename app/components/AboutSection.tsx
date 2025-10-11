@@ -1,5 +1,5 @@
 "use client";
-import { socialLinks, stats } from "@/data/aboutData";
+import { socialLinks, stats } from "@/data/heroData";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "./AnimatedButton";
 import { ClientCountUp } from "./ClientCountUp";

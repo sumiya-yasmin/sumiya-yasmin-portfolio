@@ -2,7 +2,7 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
-import { socialLinks } from "@/data/aboutData";
+import { socialLinks } from "@/data/heroData";
 import { motion } from "framer-motion";
 
 const itemVariants = {

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 const navItems = [
     { name: "Home", id: "" }, 
-    { name: "About", id: "about" },
+    // { name: "About", id: "about" },
     { name: "Skills", id: "skills" },
     { name: "Experience", id: "experience" },
     { name: "Projects", id: "projects" },
