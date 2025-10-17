@@ -1,4 +1,4 @@
-import  AboutSection  from "./components/AboutSection";
+'use client'
 import { CertificationsSection } from "./components/CertificateSection";
 import ContactSection from "./components/ContactSection";
 import EducationSection from "./components/EducationSection";
@@ -10,6 +10,7 @@ import { MainContent } from "./components/MainContent";
 import Navbar from "./components/NavBar";
 import ProjectSection from "./components/ProjectSection";
 import TechExpertiseSection from "./components/TechExpertiseSection";
+import ContributionGraph from "./components/GithubContributionGraph";
 
 export default function HomePage() {
   return (
@@ -17,7 +18,7 @@ export default function HomePage() {
       <Navbar />
       <MainContent>
         <HeroSection />
-        <AboutSection />
+        <ContributionGraph username="sumiya-yasmin"/>
         <TechExpertiseSection />
         <ExperienceSection />
         <ProjectSection />
