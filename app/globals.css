@@ -26,6 +26,13 @@
   --color-accent-secondary: #FFBD39;
   --color-accent-tertiary: #163d4d;
 
+    /* --contrib-level-1: #1f293780; */
+    --contrib-level-1: #37415180;
+    --contrib-level-2: #0e4429;
+    --contrib-level-3: #006d32;
+    --contrib-level-4: #26a641;
+    --contrib-level-5: #39d353;
+
 
   /* --color-bg-btn-primary-hover: rgba(123, 104, 238, 0.8);
   --color-bg-btn-secondary-hover: rgba(255, 189, 57, 0.8);  */
@@ -57,6 +64,11 @@
   --color-accent-tertiary: #3EAF7C; /* Light mode specific tertiary (e.g., Teal) */
   --color-bg-btn-animation: #3e57d0; /* Keeps the animation color consistent */
 
+  --contrib-level-1: #ebedf0;
+  --contrib-level-2: #c6e48b;
+  --contrib-level-3: #7ee787;
+  --contrib-level-4: #30a14e;
+  --contrib-level-5: #216e39;
 
   --background: var(--color-bg-level-1);
   --foreground: var(--color-text-primary);
