@@ -145,7 +145,7 @@ const ContributionGraph = ({ username }: { username: string }) => {
                 <button
                   onClick={() => setYear(year - 1)}
                   disabled={isLoading}
-                  className="p-1 hover:bg-gray-100 rounded transition disabled:opacity-50"
+                  className="p-1 hover:bg-[var(--color-bg-level-4))] rounded transition disabled:opacity-50"
                   aria-label="Previous year"
                 >
                   <ChevronLeft size={20} />
@@ -156,7 +156,7 @@ const ContributionGraph = ({ username }: { username: string }) => {
                 <button
                   onClick={() => setYear(year + 1)}
                   disabled={isLoading}
-                  className="p-1 hover:bg-gray-100 rounded transition disabled:opacity-50"
+                  className="p-1 hover:bg-[var(--color-bg-level-4))] rounded transition disabled:opacity-50"
                   aria-label="Next year"
                 >
                   <ChevronRight size={20} />
