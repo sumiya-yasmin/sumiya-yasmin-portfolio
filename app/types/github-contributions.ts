@@ -7,3 +7,8 @@ export interface ContributionDay {
   date: string;
   contributionCount: number;
 }
+
+export type MonthStart = {
+    month: string;
+    startWeekIndex: number;
+};
