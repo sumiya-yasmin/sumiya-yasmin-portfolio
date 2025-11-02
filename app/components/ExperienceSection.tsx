@@ -35,7 +35,7 @@ export default function ExperienceSection() {
         >
           {experienceData.map((item, index) => {
             const experienceCardClasses =
-              "p-8 border-gray-700 border-t-[0.2px] border-b-2 border-l-1 border-r-1 rounded-lg shadow-xl shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-shadow duration-300";
+              "p-8 bg-[var(--color-bg-level-2)] border-gray-700 border-t-[0.2px] border-b-2 border-l-1 border-r-1 rounded-lg shadow-xl shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-shadow duration-300";
             return (
               <motion.div
                 className={`${experienceCardClasses} flex flex-col items-start justify-center`}
@@ -51,7 +51,7 @@ export default function ExperienceSection() {
                 <h3 className="text-[22px] font-bold mb-2 text-[var(--color-text-primary)]">
                   {item.title}
                 </h3>
-                <p className="text-sm font-medium mb-4 text-[var(--color-text-secondary)]">
+                <p className="text-sm font-bold mb-4 text-[var(--color-text-secondary)]">
                   {item.subtitle}
                 </p>
                 <ul className="list-disc ml-5 text-sm space-y-2 text-[var(--color-text-secondary)]">

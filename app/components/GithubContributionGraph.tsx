@@ -133,7 +133,7 @@ const ContributionGraph = ({ username }: { username: string }) => {
         <h2 className="text-3xl font-bold mb-8 text-center text-[var(--color-text-secondary)]">
           My Coding Consistency
         </h2>
-        <div className=" p-6 rounded-lg shadow-xl overflow-x-auto">
+        <div className=" p-6 rounded-lg shadow-xl overflow-x-auto bg-[var(--color-bg-level-4)]">
           <div className="mb-6">
             <div className="flex items-center justify-between mb-4">
               <p className="text-sm text-[var(--color-text-secondary)]">

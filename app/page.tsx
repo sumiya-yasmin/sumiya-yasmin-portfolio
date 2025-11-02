@@ -23,7 +23,7 @@ export default function HomePage() {
         <ExperienceSection />
         <ProjectSection />
         <EducationSection />
-        <LearningJourneySection />
+        {/* <LearningJourneySection /> */}
         <CertificationsSection />
         <ContactSection />
         <FooterSection/>

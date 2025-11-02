@@ -57,11 +57,11 @@ export default function EducationSection() {
                 <p className="text-sm font-medium mb-4 text-[var(--color-text-secondary)]">
                    {formatTextWithBolds(item.grade)} 
                 </p>
-                <ul className="list-disc ml-5 text-sm space-y-2 text-[var(--color-text-secondary)]">
+                {/* <ul className="list-disc ml-5 text-sm space-y-2 text-[var(--color-text-secondary)]">
                   {item.descriptionPoints.map((point, i) => (
                     <li key={i}>{formatTextWithBolds(point)}</li>
                   ))}
-                </ul>
+                </ul> */}
               </motion.div>
             );
           })}
