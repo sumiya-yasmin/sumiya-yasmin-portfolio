@@ -76,14 +76,14 @@ export default function ProjectSection() {
 
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           <AnimatePresence>
             {filteredItems.map((item) => {
               return (
                 <motion.div
                   key={item.id}
-                  className="group relative overflow-hidden rounded shadow-xl aspect-square project-card"
+                  className="group relative overflow-hidden rounded shadow-xl aspect-video project-card"
                   layout
                   variants={itemVariants}
                   initial="hidden"
@@ -94,7 +94,7 @@ export default function ProjectSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
                   />
 
                   <div className="absolute flex justify-center items-center inset-0 opacity-0 group-hover:opacity-90 transition-opacity duration-300 delay-300 z-20">
