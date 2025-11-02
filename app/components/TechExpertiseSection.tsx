@@ -1,6 +1,8 @@
 "use client";
 import { techExpertiseData } from "@/data/expertiseData";
 import { motion, Variants } from "framer-motion";
+import ExpertiseCard from "./ExpertiseCard";
+
 
 const containerVariants: Variants = {
   hidden: {},
@@ -25,7 +27,7 @@ export default function TechExpertiseSection() {
   return (
     <section id="skills" className="px-6 py-24">
       <motion.div
-        className="max-w-6xl mx-auto"
+        className="max-w-6xl mx-auto items-center justify-center flex flex-col"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -40,34 +42,11 @@ export default function TechExpertiseSection() {
           knowledge and hands-on experience with these key technologies and
           tools
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 mt-12">
-          {techExpertiseData.map((skill, index) => {
-            const techCardClasses =
-              "bg-[var(--color-bg-level-3)] p-8 rounded-lg shadow-xl group transition duration-300 ease-in-out";
-            return (
-              <motion.div
-                className={`${techCardClasses} flex flex-col items-center justify-center`}
-                variants={itemVariants}
-                key={index}
-                 whileHover={{ y: -8 }} 
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
-                <div className="w-16 h-16 mb-6 flex items-center justify-center rounded-full bg-[var(--color-accent-secondary)]">
-                  <skill.icon
-                    size={28}
-                    className="text-[var(--color-text-colorful)]"
-                  />
-                </div>
-                <h3 className="text-[22px] font-bold mb-3 text-[var(--color-text-primary)]  transition duration-300 group-hover:text-[var(--color-accent-secondary)]">
-                  {skill.title}
-                </h3>
-                <p className="text-[var(--color-text-secondary)] text-[16px]">
-                  {skill.description}
-                </p>
-              </motion.div>
-            );
-          })}
+        <div className="mt-6 py-4">
+
+        <ExpertiseCard />
         </div>
+        
       </motion.div>
     </section>
   );
