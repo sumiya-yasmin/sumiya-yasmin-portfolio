@@ -3,6 +3,7 @@ import { X, Link, Github } from "lucide-react";
 import { Project } from "../types";
 import Image from "next/image";
 import { MouseEvent } from "react";
+import { formatTextWithBolds } from "./FormatTextBold";
 interface ProjectModalProps {
   project: Project;
   onClose: () => void;
@@ -77,17 +78,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <div>
               <h3 className="text-lg font-bold mb-2">Stack</h3>
               <p className="text-[var(--color-text-seconday)]">
-                MERN Stack, Next.js, Tailwind, etc.
+                {project.stackSummary} 
               </p>
             </div>
           </div>
 
           <h3 className="text-2xl font-bold mb-4">Project Overview</h3>
           <p className="text-[var(--color-text-seconday)] mb-8">
-            This is a brief placeholder for the in-depth description of the
-            project. Here, I will explain the problem solved, the user goals,
-            and the overall architecture.Such as For LinkDeen, we will discuss
-            JWT, MongoDB schemas, and real-time feeds.
+            {formatTextWithBolds(project.descriptionOverview)} 
           </p>
 
           <div className="mb-8">
@@ -102,29 +100,24 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               />
             </div>
           </div>
-
-          <h3 className="text-2xl font-bold mb-4">Technical Challenges</h3>
-          <ul className="list-disc list-inside space-y-4 text-[var(--color-text-seconday)]">
-            <li>
-              <span className="font-semibold text-[var(--color-text-primary)]">
-                Challenge:
-              </span>{" "}
-              Handling secure user authentication and authorization (JWT).
-              <p className="ml-4 italic text-sm">
-                Solution: Implemented secure, HttpOnly cookie-based JWT tokens
-                for state management across server and client.
-              </p>
-            </li>
-            <li>
-              <span className="font-semibold text-[var(--color-text-primary)]">
-                Challenge:
-              </span>{" "}
-              Optimizing performance for the infinite scroll feed.
-              <p className="ml-4 italic text-sm">
-                Solution: Used efficient MongoDB indexing and server-side
-                cursor-based pagination.
-              </p>
-            </li>
+          
+          
+          <h3 className="text-2xl font-bold mb-4">Core Features</h3>
+          <ul className="list-disc list-inside space-y-3 text-[var(--color-text-seconday)] mb-10 ml-4">
+            {project.coreFeatures.map((feature, i) => (
+              <li key={i}>
+                {formatTextWithBolds(feature)}
+              </li>
+            ))}
+          </ul>
+          
+          <h3 className="text-2xl font-bold mb-4">Key Technical Implementations</h3>
+          <ul className="list-disc list-inside space-y-4 text-[var(--color-text-seconday)] ml-4">
+            {project.keyImplementations.map((impl, i) => (
+              <li key={i} className="text-[var(--color-text-primary)]">
+                {formatTextWithBolds(impl)}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
