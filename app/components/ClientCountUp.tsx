@@ -1,3 +1,4 @@
+"use client"
 import dynamic from "next/dynamic";
 import React, { useState, useEffect } from "react";
 
@@ -20,13 +21,15 @@ export const ClientCountUp: React.FC<ClientCountUpProps> = (props) => {
     setMounted(true);
   }, []);
 
+  const numericEnd = Number(props.end);
+  const finalEnd = isNaN(numericEnd) ? 0 : numericEnd;
   if (!mounted) {
     return <span suppressHydrationWarning>0</span>;
   }
   return (
     <DynamicCountUp
       start={0}
-      end={props.end}
+      end={finalEnd}
       duration={props.duration}
       decimals={props.decimals}
       suffix={props.suffix}

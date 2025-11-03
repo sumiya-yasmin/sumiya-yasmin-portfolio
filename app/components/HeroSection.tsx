@@ -3,8 +3,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "./AnimatedButton";
 import { ClientCountUp } from "./ClientCountUp";
-import { stats } from "@/data/heroData";
+import { socialLinks, stats } from "@/data/heroData";
 import Link from "next/link";
+import { useContributions } from "@/app/hooks/useContributions";
+const MY_GITHUB_USERNAME = "sumiya-yasmin";
+const CURRENT_YEAR = new Date().getFullYear();
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -32,6 +35,24 @@ const statCardVariants = {
 };
 
 export const HeroSection = () => {
+  const { data, isLoading } = useContributions(
+    MY_GITHUB_USERNAME,
+    CURRENT_YEAR
+  );
+
+  const totalContributions = data ? data.totalContributions : 0;
+
+  const dynamicStats = stats.map((stat) => {
+    if (stat.label.includes("Commits")) {
+      return {
+        ...stat,
+        value: isLoading ? "..." : totalContributions,
+        suffix: isLoading ? "" : "+",
+        link: `https://github.com/${MY_GITHUB_USERNAME}?tab=overview&from=${CURRENT_YEAR}-01-01&to=${CURRENT_YEAR}-12-31`,
+      };
+    }
+    return stat;
+  });
   return (
     <motion.div
       className="flex py-35 flex-col lg:flex-row justify-between items-center max-w-6xl mx-auto px-6"
@@ -45,7 +66,7 @@ export const HeroSection = () => {
             Sumiya Yasmin
           </motion.h1>
           <motion.p className="text-2xl font-semibold" variants={titleVariants}>
-            Full-Stack Developer | Software Engineer
+            Full Stack Developer | Software Engineer
           </motion.p>
           <motion.p variants={itemVariants}>
             I build robust, high-performance web applications and scalable
@@ -55,15 +76,38 @@ export const HeroSection = () => {
             systems.
           </motion.p>
         </div>
+        <div className="flex items-center space-x-4 mt-4">
+          {socialLinks.map((social, index) => {
+            const iconButtonClasses =
+              "w-9 h-9 flex justify-center items-center rounded-full bg-[var(--color-bg-level-4)] text-[var(--color-text-primary)] hover:bg-[var(--color-accent-secondary)] hover:text-white transition-all duration-300 ease-in-out";
+            return (
+              <motion.a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-10 h-10 p-3 rounded-full ${iconButtonClasses}`}
+                variants={itemVariants}
+              >
+                <social.icon size={20} />
+              </motion.a>
+            );
+          })}
+        </div>
         <motion.div className="flex mt-5 gap-6" variants={itemVariants}>
-          <AnimatedButton variant="primary">View Projects</AnimatedButton>
-          <AnimatedButton variant="secondary">Download CV</AnimatedButton>
+          <Link href="#projects">
+            <AnimatedButton variant="primary">View Projects</AnimatedButton>
+          </Link>
+          <a href="/sumiya_yasmin_cv.pdf" download target="_blank">
+            <AnimatedButton variant="secondary">Download CV</AnimatedButton>
+          </a>
         </motion.div>
       </div>
 
       <div className="w-full lg:w-2/5 grid grid-cols-1 md:grid-cols-2 gap-6">
-        {stats.map((stat, index) => {
-          const cardClasses = "bg-[var(--color-bg-level-4)] p-6";
+        {dynamicStats.map((stat, index) => {
+          const cardClasses =
+            "bg-[var(--color-bg-level-4)] p-6 shadow-2xl transition duration-300 hover:shadow-teal-500/30";
           return (
             <Link
               href={stat.link}
