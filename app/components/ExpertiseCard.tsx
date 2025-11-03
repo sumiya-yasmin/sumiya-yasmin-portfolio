@@ -46,7 +46,6 @@ export default function ExpertiseCard() {
                 )}
                 <h3 className="text-xl font-bold text-[var(--color-text-primary)]">{skill.title}</h3>
               </div>
-              {/* <p className="text-sm text-gray-400 italic">{skill.value}</p> */}
               <div className="flex flex-wrap gap-x-5 gap-y-4 items-center">
                 {skill.techLogos.map((logo) => {
                   const LogoComponent = Logos[logo.componentKey];

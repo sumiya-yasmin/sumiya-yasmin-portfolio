@@ -14,15 +14,6 @@ const containerVariants: Variants = {
   },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { type: "spring", stiffness: 100 },
-  },
-};
 export default function TechExpertiseSection() {
   return (
     <section id="skills" className="px-6 py-24">
