@@ -8,7 +8,7 @@ export const projectItems = [
     stackSummary: "React, TypeScript, Node.js, Express, MongoDB, TailwindCSS, Zod, JWT, React Query",
     liveLink: "https://link-deen.vercel.app/",
     githubLink: "https://github.com/sumiya-yasmin/link-deen",
-    image: "/linkdeencover.png",
+    image: "/linkdeenproject.png",
     imagecover: "/linkdeencover.png",
 
     descriptionOverview:
@@ -36,9 +36,10 @@ export const projectItems = [
     title: "Inventory Management System",
     categories: ["FULLSTACK", "ASP-DOTNET-CORE"],
     stackSummary: "ASP.NET Core MVC, C#, SQL Server, Entity Framework, Bootstrap",
-    liveLink: "https://github.com/sumiya-yasmin/inventory-app", 
-    githubLink: "https://github.com/sumiya-yasmin/inventory-app",
-    image: "/inventoryapp.png", 
+    // liveLink: "https://github.com/sumiya-yasmin/InventoryApp", 
+    githubLink: "https://github.com/sumiya-yasmin/InventoryApp",
+    image: "/inventoryapp.png",
+    imagecover: "/inventoryappcover.png", 
 
     descriptionOverview:
       "InventoryApp is a robust management system built on the **ASP.NET Core MVC** framework and **C#**. The application is designed to streamline business operations by managing product records, tracking stock levels, and automating sales record keeping. It utilizes a **relational database (SQL Server)** with **Entity Framework** for object-relational mapping.",
@@ -62,9 +63,10 @@ export const projectItems = [
     title: "Open-Source Contribution: Appointment Booking System",
     categories: ["FULLSTACK", "MERN"],
     stackSummary: "Node.js, Express, MongoDB, React Query, API Integration",
-    liveLink: "#", 
+    // liveLink: "https://github.com/bongodev/appointment-booking", 
     githubLink: "https://github.com/bongodev/appointment-booking",
     image: "/appointmentbooking.png", 
+    imagecover: "/appointmentbooking.png", 
 
     descriptionOverview:
       "This project involved a targeted open-source contribution to an established community **Appointment Booking System**. My primary focus was on solidifying the application's **backend security and user infrastructure**, specifically strengthening the **authentication workflow**, profile management, and ensuring proper **access control** using an integrated API.",
