@@ -26,8 +26,8 @@ export default function HomePage() {
         {/* <LearningJourneySection /> */}
         <CertificationsSection />
         <ContactSection />
-        <FooterSection/>
       </MainContent>
+        <FooterSection/>
     </>
   );
 }
