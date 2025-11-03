@@ -39,14 +39,15 @@ export default function Navbar() {
     >
       <div className="max-w-6xl px-4 py-4 mx-auto ">
         <div className="flex justify-between items-baseline">
-          <motion.div
+          <motion.a
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
+             href={"/"} 
             className="font-black text-3xl"
           >
             Sumiya Yasmin
-          </motion.div>
+          </motion.a>
 
           <div className={`hidden md:flex space-x-8 items-center ${navTextColorClass}`}>
             {navItems.map((item, i) => (

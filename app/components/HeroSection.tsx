@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "./AnimatedButton";
 import { ClientCountUp } from "./ClientCountUp";

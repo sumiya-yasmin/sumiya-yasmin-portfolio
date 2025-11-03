@@ -1,18 +1,9 @@
 "use client";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { techExpertiseData } from "@/data/expertiseData";
 import { motion, Variants } from "framer-motion";
 import { Logos } from "./Logos";
 import Image from "next/image";
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.15,
-    },
-  },
-};
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
@@ -57,7 +48,7 @@ export default function ExpertiseCard() {
                     >
                       {LogoComponent && (
                         <Image
-                          src={LogoComponent}
+                          src={LogoComponent as StaticImport }
                           alt={logo.name}
                           width={32}
                           height={32}

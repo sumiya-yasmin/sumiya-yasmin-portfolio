@@ -1,5 +1,4 @@
 "use client";
-import { techExpertiseData } from "@/data/expertiseData";
 import { motion, Variants } from "framer-motion";
 import ExpertiseCard from "./ExpertiseCard";
 

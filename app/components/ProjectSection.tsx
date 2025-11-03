@@ -1,13 +1,11 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { LinkIcon, Eye } from "lucide-react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { categories, projectItems } from "@/data/projectData";
 import { useMemo, useState } from "react";
 import ProjectModal from "./ProjectModal";
 import { Project } from "../types/index";
-import { AnimatedButton } from "./AnimatedButton";
 
 interface ModalState {
   isOpen: boolean;

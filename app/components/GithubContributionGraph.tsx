@@ -38,7 +38,9 @@ const ContributionGraph = ({ username }: { username: string }) => {
 
   const { data, isLoading, isError, error } = useContributions(username, year);
 
-  const contributions: ContributionData = data || { totalContributions: 0 };
+  const contributions: ContributionData = useMemo(() => {
+  return data || { totalContributions: 0 };
+}, [data]);
 
   const weeks = useMemo(() => {
     const weeksArray = [];
@@ -106,7 +108,7 @@ const ContributionGraph = ({ username }: { username: string }) => {
       }
     });
     return starts;
-  }, [weeks]);
+  }, [weeks, months]);
 
   const totalContributions = contributions.totalContributions;
 

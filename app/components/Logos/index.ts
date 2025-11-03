@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 import ReactLogo from './React.svg';
 import NextjsLogo from './Nextjs.svg';
 import NodejsLogo from './Nodejs.svg';
@@ -20,8 +22,8 @@ import PostgresqlLogo from './PostgreSQL.svg';
 import MongoDBLogo from './MongoDB.svg';
 import SQLLogo from './SQL.svg';
 // import PowerBILogo from './PowerBI.svg';
-import TableauLogo from './Tableau.svg';
-import ExcelLogo from './Excel.svg'; 
+// import TableauLogo from './Tableau.svg';
+// import ExcelLogo from './Excel.svg'; 
 
 // Workflow & DevOps
 import GitLogo from './Git.svg';
@@ -31,7 +33,7 @@ import PostmanLogo from './Postman.svg';
 import ReactNativeLogo from './ReactNative.svg';
 
 
-export const Logos: Record<string, any> = {
+export const Logos: Record<string, StaticImageData | React.ElementType> = {
     // Full Stack Development
     React: ReactLogo,
     Nextjs: NextjsLogo,
