@@ -1,37 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg-level-1: #333333;
+  --color-bg-level-1: #111111;
   /* --color-dark-bg-about-me-resume-client-feedback-contact-me-bottom: #312F2F; */
-    --color-bg-level-2: #312F2F;
+    --color-bg-level-2: #111111;
   /*services card*/
   --color-bg-level-3: #262020; 
-  --color-bg-level-4: #3E3C3C; /*aboutme card*/
+  --color-bg-level-4: #1f2937; /*aboutme card*/
   --color-bg-carousel: #136C64;
   
   /* --color-text-primary: #f0f0f0;    
   --color-text-secondary: #a3a3a3; */
   
   /* --color-text-title-active-primary: #FFFFFF; */
-  --color-text-primary: #FFFFFF;
+  --color-text-primary: #F8F8F8;
   --color-text-navbar: #E1D0D0;
   /* --color-text-aboutme-subtitle: #CCCCCC; */
   --color-text-seconday: #CCCCCC;
   --color-text-tertiary: #CCCCCC;
+  --color-text-footer: #C7C7C7;
 
   --color-bg-input-border: #6F6C6C;
   --color-text-input: #757575;
 
   --color-accent-primary: #7B68EE;
-  --color-accent-secondary: #FFBD39;
+  --color-accent-secondary: #00E3A5;
   --color-accent-tertiary: #163d4d;
 
     /* --contrib-level-1: #1f293780; */
-    --contrib-level-1: #37415180;
-    --contrib-level-2: #0e4429;
-    --contrib-level-3: #006d32;
-    --contrib-level-4: #26a641;
-    --contrib-level-5: #39d353;
+   --contrib-level-1: #1D343D; 
+    --contrib-level-2: #005739; 
+    --contrib-level-3: #006D32;
+    --contrib-level-4: #26A641;
+    --contrib-level-5: #39D353;
 
 
   /* --color-bg-btn-primary-hover: rgba(123, 104, 238, 0.8);
@@ -46,33 +47,41 @@
 }
 
 [data-theme="light"] {
-  --color-bg-level-1:#ffffff;
-  --color-bg-level-2:#f7f7f7;
-  --color-bg-level-3:#e9e9e9;
-   --color-bg-level-4: #ffffff; /* AboutMe card/Input bg (Pure White) */
-  --color-bg-carousel: #008080; /* A darker teal for contrast */
+  --color-bg-level-1: #F0F0F0;
+    --color-bg-level-2: #FFFFFF;
+    --color-bg-level-3: #F9F9F9; 
+    --color-bg-level-4: #E8E8E8; 
+    --color-bg-carousel: #75DAD2;
+    
+    /* TEXT (Darkened) */
+    --color-text-primary: #1A1A1A;
+    --color-text-navbar: #333333;
+    --color-text-seconday: #555555;
+    --color-text-tertiary: #888888;
+    --color-text-footer: #777777;
 
-  --color-text-primary: #171717;
-  --color-text-secondary: #666666;
-   --color-text-tertiary: #CCCCCC;
-   --color-text-navbar: #171717;
-    --color-bg-input-border: #cccccc; /* Light gray border */
-  --color-text-input: #aaaaaa; /* Lighter placeholder text */
+    /* INPUTS */
+    --color-bg-input-border: #CCCCCC;
+    --color-text-input: #333333;
 
-   --color-accent-primary: #7B68EE;
-  --color-accent-secondary: #FFBD39;
-  --color-accent-tertiary: #3EAF7C; /* Light mode specific tertiary (e.g., Teal) */
-  --color-bg-btn-animation: #3e57d0; /* Keeps the animation color consistent */
+    /* ACCENTS (Kept Consistent) */
+    --color-accent-primary: #7B68EE;
+    --color-accent-secondary: #00E3A5;
+    --color-accent-tertiary: #376D80; /* Adjusted for better contrast on light BG */
 
-  --contrib-level-1: #ebedf0;
-  --contrib-level-2: #c6e48b;
-  --contrib-level-3: #7ee787;
-  --contrib-level-4: #30a14e;
-  --contrib-level-5: #216e39;
+    /* CONTRIBUTION GRAPH (Light Theme Greens) */
+    --contrib-level-1: #EDEDED; /* Very Light Gray */
+    --contrib-level-2: #C6E48B;
+    --contrib-level-3: #7BC96F;
+    --contrib-level-4: #239A3B;
+    --contrib-level-5: #146322; /* Darkest */
 
-  --background: var(--color-bg-level-1);
-  --foreground: var(--color-text-primary);
-  --primary: #0070f3;
+    /* BUTTONS */
+    --color-bg-btn-animation: #3e57d0;
+
+    --background: var(--color-bg-level-1);
+    --foreground: var(--color-text-primary);
+    --primary: #0070f3;
 }
 body {
   background: var(--background);
@@ -120,8 +129,8 @@ body {
   width: 95%;
   height: 95%;
   border-radius: 0.5rem;
-  background-color: var(--color-accent-secondary);
-  opacity: 0.8; 
+  background-color: #000000;
+  opacity: 0.4; 
   transform: translate(-50%, -50%) scaleX(0); 
   transform-origin: left;
   transition: transform 0.4s ease-out;
