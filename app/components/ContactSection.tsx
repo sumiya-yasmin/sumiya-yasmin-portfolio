@@ -1,5 +1,4 @@
 "use client";
-
 import { AnimatedButton } from "./AnimatedButton";
 
 export default function ContactSection() {
@@ -18,36 +17,43 @@ export default function ContactSection() {
           quick chat!
         </p>
         <div className="max-w-3xl mx-auto">
-          <form className="space-y-5">
+          <form className="space-y-5"
+          action="https://formspree.io/f/mpwobpzn"
+          method="POST"
+          >
             <div className="flex flex-col md:flex-row gap-6">
               <input
                 type="text"
+                name="Name"
                 placeholder="Your Name"
                 required
-                className={`w-full p-3.5 ${inputBg} border ${inputBorder} focus:ring-2 placeholder-[var(--color-text-input)] focus:ring-[var(--color-text-input)] focus:border-transparent transition-all`}
+                className={`w-full p-3.5 ${inputBg} rounded-lg border ${inputBorder} focus:ring-2 placeholder-[var(--color-text-input)] focus:ring-[var(--color-text-input)] focus:border-transparent transition-all`}
               />
               <input
                 type="email"
+                name="Email"
                 placeholder="Your Email"
                 required
-                className={`w-full p-3.5 ${inputBg} border ${inputBorder} focus:ring-2 placeholder-[var(--color-text-input)] focus:ring-[var(--color-text-input)] focus:border-transparent transition-all`}
+                className={`w-full p-3.5 ${inputBg} rounded-lg border ${inputBorder} focus:ring-2 placeholder-[var(--color-text-input)] focus:ring-[var(--color-text-input)] focus:border-transparent transition-all`}
               />
             </div>
             <div className="">
               <input
                 type="text"
+                name="Subject"
                 placeholder="Your Subject"
                 required
-                className={`w-full p-3.5 ${inputBg} border ${inputBorder} focus:ring-2 placeholder-[var(--color-text-input)] focus:ring-[var(--color-text-input)] focus:border-transparent transition-all`}
+                className={`w-full p-3.5 ${inputBg} rounded-lg border ${inputBorder} focus:ring-2 placeholder-[var(--color-text-input)] focus:ring-[var(--color-text-input)] focus:border-transparent transition-all`}
               />
             </div>
 
             <div>
               <textarea
+                name="Message"
                 placeholder="Your Message"
                 required
                 rows={6}
-                className={`w-full p-3.5 ${inputBg} border ${inputBorder} focus:ring-2 placeholder-[var(--color-text-input)] focus:ring-[var(--color-text-input)] focus:border-transparent transition-all`}
+                className={`resize-none w-full p-3.5 ${inputBg} rounded-lg border ${inputBorder} focus:ring-2 placeholder-[var(--color-text-input)] focus:ring-[var(--color-text-input)] focus:border-transparent transition-all`}
               />
             </div>
             <div className="flex justify-start">

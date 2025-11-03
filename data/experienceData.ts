@@ -12,7 +12,7 @@ export const experienceData = [
         ] 
     },
     { 
-        title: "Open Source Contributor & Web Development Trainee", 
+        title: "Web Development Trainee", 
         subtitle: "bongoDev, Dhaka, Bangladesh", 
         date: "Mar 2025 - May 2025", 
         descriptionPoints: [
