@@ -21,8 +21,9 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '900'], 
 });
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "The official portfolio",
+  title: "Sumiya Yasmin | Fullstack Developer", 
+  description: "Sumiya Yasmin's portfolio showcasing Fullstack, MERN, and ASP.NET Core projects.",
+  keywords: "Sumiya Yasmin, Fullstack, MERN, React, Next.js, ASP.NET Core, Portfolio",
 };
 
 export default function RootLayout({
