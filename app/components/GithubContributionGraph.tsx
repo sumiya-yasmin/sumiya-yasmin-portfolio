@@ -3,7 +3,20 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useContributions } from "../hooks/useContributions";
 import { ContributionData, MonthStart } from "../types/github-contributions";
-
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 const getColor = (count: number) => {
   if (count === 0) return "bg-[var(--contrib-level-1)]";
   if (count <= 3) return "bg-[var(--contrib-level-2)]";
@@ -39,8 +52,8 @@ const ContributionGraph = ({ username }: { username: string }) => {
   const { data, isLoading, isError, error } = useContributions(username, year);
 
   const contributions: ContributionData = useMemo(() => {
-  return data || { totalContributions: 0 };
-}, [data]);
+    return data || { totalContributions: 0 };
+  }, [data]);
 
   const weeks = useMemo(() => {
     const weeksArray = [];
@@ -49,7 +62,7 @@ const ContributionGraph = ({ username }: { username: string }) => {
 
     const firstDay = new Date(startDate);
     firstDay.setDate(firstDay.getDate() - firstDay.getDay());
-
+    // eslint-disable-next-line prefer-const
     let currentDate = new Date(firstDay);
 
     while (
@@ -74,20 +87,6 @@ const ContributionGraph = ({ username }: { username: string }) => {
     return weeksArray.slice(0, 53);
   }, [year, contributions]);
 
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
   const monthStarts = useMemo(() => {
     const starts: MonthStart[] = [];
     let currentMonth = -1;
