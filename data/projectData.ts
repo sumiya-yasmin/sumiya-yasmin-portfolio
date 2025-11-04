@@ -8,7 +8,7 @@ export const projectItems = [
     stackSummary: "React, TypeScript, Node.js, Express, MongoDB, TailwindCSS, Zod, JWT, React Query",
     liveLink: "https://link-deen.vercel.app/",
     githubLink: "https://github.com/sumiya-yasmin/link-deen",
-    image: "/linkdeenproject.png",
+    image: "/linkdeenproject.PNG",
     imagecover: "/linkdeencover.png",
 
     descriptionOverview:
@@ -65,8 +65,8 @@ export const projectItems = [
     stackSummary: "Node.js, Express, MongoDB, React Query, API Integration",
     // liveLink: "https://github.com/bongodev/appointment-booking", 
     githubLink: "https://github.com/bongodev/appointment-booking",
-    image: "/appointmentbooking.png", 
-    imagecover: "/appointmentbooking.png", 
+    image: "/appointmentbooking.PNG", 
+    imagecover: "/appointmentbookingcover.png", 
 
     descriptionOverview:
       "This project involved a targeted open-source contribution to an established community **Appointment Booking System**. My primary focus was on solidifying the application's **backend security and user infrastructure**, specifically strengthening the **authentication workflow**, profile management, and ensuring proper **access control** using an integrated API.",
